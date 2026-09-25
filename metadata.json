@@ -1,0 +1,6 @@
+{
+  "name": "Ahmed Home Decoration",
+  "description": "Modern home décor shop in Khushab offering stylish, quality wall art, luxury clocks, and modern decorative pieces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

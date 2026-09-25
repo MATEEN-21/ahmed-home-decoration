@@ -1,0 +1,442 @@
+{
+  "settings": {
+    "shopName": "Ahmed Home Decoration",
+    "tagline": "Elevating Pakistani Homes with Timeless Elegance & Artisan Craft",
+    "phone": "0304 9088810",
+    "whatsapp": "0304 9088810",
+    "email": "",
+    "location": "Thanan Market, Khushab, Pakistan",
+    "googleMapsUrl": "https://maps.app.goo.gl/ygUXQUFpzNvTUMTs9",
+    "googleMapsEmbed": "https://maps.google.com/maps?q=32.295008,72.349388&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "announcement": {
+      "enabled": false,
+      "text": "✨ Exclusive Khushab Décor Collection: Free Delivery on orders above Rs. 4,999 across Pakistan!"
+    },
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com",
+      "tiktok": "https://tiktok.com",
+      "youtube": "https://youtube.com"
+    },
+    "deliveryNote": "Nationwide Express Cash on Delivery (COD) & Safe Breakage-Proof Packaging Across Pakistan",
+    "currency": "Rs."
+  },
+  "slides": [
+    {
+      "id": "slide-1790179919346",
+      "title": "Lush Greenery for Modern Outdoor Spaces",
+      "description": "Bring everlasting freshness to your lawns, balconies, rooftops, and vertical gardens with high-durability, weather-resistant artificial grass.",
+      "image": "/uploads/ahmed_1790311649442_e6f963be.png",
+      "buttonText": "Explore Grass Collection",
+      "buttonLink": "/products",
+      "active": true,
+      "order": 4
+    },
+    {
+      "id": "slide-1790314632655",
+      "title": "Premium Plastic Mats",
+      "subtitle": "Stylish & Durable for Every Home",
+      "badge": "Quality Plastic Mats",
+      "description": "Discover stylish and durable plastic mats designed to add comfort, color, and beauty to your home.",
+      "image": "/uploads/ahmed_1790314265372_9d15f215.png",
+      "buttonText": "Explore Collection",
+      "buttonLink": "/products",
+      "active": true,
+      "order": 3
+    },
+    {
+      "id": "slide-1790319348448",
+      "title": "Modern Wall Art & Living Room Decor",
+      "subtitle": "Transform Your Home Interior",
+      "badge": "Best Quality Frames",
+      "description": "Discover our exclusive collection of premium wall art, framed paintings, and modern home decoration pieces designed to add elegance and style to your space.",
+      "image": "/uploads/ahmed_1790319146427_7512901d.png",
+      "buttonText": "Explore Collection",
+      "buttonLink": "/products",
+      "active": true,
+      "order": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-wall-art",
+      "name": "Islamic Wall Art & Calligraphy",
+      "slug": "islamic-wall-art",
+      "description": "Laser-cut stainless steel and acrylic calligraphy featuring Surahs, Ayatul Kursi, and modern geometric panels.",
+      "image": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 1
+    },
+    {
+      "id": "cat-clocks-mirrors",
+      "name": "Luxury Wall Clocks & Mirrors",
+      "slug": "wall-clocks-mirrors",
+      "description": "Silent sweep Scandinavian clocks, gold sunburst mirrors, and ornate entryway accents.",
+      "image": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 2
+    },
+    {
+      "id": "cat-lighting",
+      "name": "Lamps & Ambient Lighting",
+      "slug": "lighting-lamps",
+      "description": "Traditional brass filigree lanterns, warm LED bedside glow lamps, and crystal chandeliers.",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 3
+    },
+    {
+      "id": "cat-vases-planters",
+      "name": "Ceramic Vases & Table Accents",
+      "slug": "vases-planters",
+      "description": "Glazed ceramic vases, gold leaf trays, faux pampas grass arrangements, and marble coasters.",
+      "image": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 4
+    },
+    {
+      "id": "cat-cushions-textiles",
+      "name": "Velvet Cushions & Living Textiles",
+      "slug": "cushions-textiles",
+      "description": "Plush embroidered Pakistani velvet throw pillow covers, table runners, and tasseled throws.",
+      "image": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 5
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1790329404741-caed26",
+      "name": "Framed Scenic Landscape & Floral Vertical Wall Art Set",
+      "description": "Elegant vertical framed wall art featuring beautiful nature, waterfall, and floral scenery. Perfect for modern living room and hallway decoration with a premium wooden frame finish.",
+      "originalPrice": 350,
+      "discountPercentage": 0,
+      "price": 350,
+      "oldPrice": null,
+      "categoryId": "cat-clocks-mirrors",
+      "categoryName": "Luxury Wall Clocks & Mirrors",
+      "images": [
+        "/uploads/ahmed_1790329033512_74c3596e.jpeg",
+        "/uploads/ahmed_1790329041763_87a26c53.jpeg",
+        "/uploads/ahmed_1790329049447_fbf1491c.jpeg",
+        "/uploads/ahmed_1790329058453_e11fe547.jpeg"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 10,
+      "featured": true,
+      "badge": "New Arrival",
+      "details": {
+        "material": "High-quality synthetic wood frame with HD print matte finish",
+        "dimensions": "",
+        "finishColor": "Rich Dark Wood Frame & Vibrant Multi-color Scenery",
+        "origin": "Ahmed Home Decoration, Khushab",
+        "careInstructions": "Wipe gently with a dry microfiber cloth; keep away from direct moisture."
+      },
+      "active": true,
+      "createdAt": "2026-09-25T09:43:24.741Z",
+      "updatedAt": "2026-09-25T09:43:24.741Z"
+    },
+    {
+      "id": "prod-1",
+      "name": "Ayat-ul-Kursi 3D Stainless Steel Metal Wall Art",
+      "description": "Exquisite 3D layered Islamic calligraphy laser-cut in heavy gauge metal with a corrosion-proof electrostatic gold powder finish. Ready to hang with included mounting hardware.",
+      "originalPrice": 8500,
+      "discountPercentage": 20,
+      "price": 6800,
+      "oldPrice": 8500,
+      "categoryId": "cat-wall-art",
+      "categoryName": "Islamic Wall Art & Calligraphy",
+      "images": [
+        "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 14,
+      "featured": true,
+      "badge": "Best Seller",
+      "details": {
+        "material": "1.8mm Premium Carbon Steel",
+        "dimensions": "90cm x 70cm (36 x 28 inches)",
+        "finishColor": "Matte Black & Imperial Gold Dual Tone",
+        "origin": "Ahmed Home Decoration Workshop, Khushab",
+        "careInstructions": "Wipe gently with a clean micro-fiber cloth. Avoid harsh chemicals."
+      },
+      "active": true,
+      "createdAt": "2026-01-10T10:00:00.000Z",
+      "updatedAt": "2026-03-01T10:00:00.000Z"
+    },
+    {
+      "id": "prod-2",
+      "name": "Sunburst Bevelled Royal Wall Mirror (Gold Frame)",
+      "description": "An eye-catching focal point for your hallway, drawing room, or vanity. Features hand-fitted radial petal rays with genuine lead-free HD glass mirror.",
+      "originalPrice": 11500,
+      "discountPercentage": 21,
+      "price": 9085,
+      "oldPrice": 11500,
+      "categoryId": "cat-clocks-mirrors",
+      "categoryName": "Luxury Wall Clocks & Mirrors",
+      "images": [
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 8,
+      "featured": true,
+      "badge": "Hot Deal",
+      "details": {
+        "material": "Iron Frame with High-Definition Silver Mirror",
+        "dimensions": "75cm Diameter (30 inches)",
+        "finishColor": "Antique Champagne Gold",
+        "origin": "Khushab Showroom Special",
+        "careInstructions": "Clean glass with standard glass cleaner spray."
+      },
+      "active": true,
+      "createdAt": "2026-01-12T10:00:00.000Z",
+      "updatedAt": "2026-03-02T10:00:00.000Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Nordic Minimalist Silent Sweep Large Wall Clock",
+      "description": "Modern architectural 3D floating numeric wall clock with quiet high-torque Taiwan mechanism. No ticking sound, ideal for living rooms and bedrooms.",
+      "originalPrice": 6200,
+      "discountPercentage": 21,
+      "price": 4898,
+      "oldPrice": 6200,
+      "categoryId": "cat-clocks-mirrors",
+      "categoryName": "Luxury Wall Clocks & Mirrors",
+      "images": [
+        "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 20,
+      "featured": true,
+      "badge": "Trending",
+      "details": {
+        "material": "Powder Coated Metal with Walnut Wooden Hands",
+        "dimensions": "60cm (24 inches)",
+        "finishColor": "Matte Deep Charcoal & Natural Walnut",
+        "origin": "Direct Imported Movement, Custom Assembled in Khushab",
+        "careInstructions": "Requires 1x AA Carbon battery (included)."
+      },
+      "active": true,
+      "createdAt": "2026-01-15T10:00:00.000Z",
+      "updatedAt": "2026-03-02T10:00:00.000Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Handcrafted Moroccan Filigree Brass Table Lantern",
+      "description": "Cast dramatic patterns of warm light across your room with this traditional handcrafted brass lantern featuring intricate floral fretwork.",
+      "originalPrice": 3600,
+      "discountPercentage": 0,
+      "price": 3600,
+      "oldPrice": null,
+      "categoryId": "cat-lighting",
+      "categoryName": "Lamps & Ambient Lighting",
+      "images": [
+        "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 12,
+      "featured": false,
+      "badge": "Handcrafted",
+      "details": {
+        "material": "Hand-tooled Pure Brass Alloy",
+        "dimensions": "38cm Height x 18cm Base",
+        "finishColor": "Warm Brushed Brass Patina",
+        "origin": "Traditional Artisan Craft",
+        "careInstructions": "Fits standard E14/E27 LED warm bulbs or tea-lights."
+      },
+      "active": true,
+      "createdAt": "2026-01-20T10:00:00.000Z",
+      "updatedAt": "2026-03-03T10:00:00.000Z"
+    },
+    {
+      "id": "prod-5",
+      "name": "Fluted Ceramic Donut Vase Set (Pair)",
+      "description": "Iconic contemporary hollow circular vases in textured off-white terracotta ceramic. Perfectly styles dried botanicals, faux eucalyptus, or pampas.",
+      "originalPrice": 3800,
+      "discountPercentage": 15,
+      "price": 3230,
+      "oldPrice": 3800,
+      "categoryId": "cat-vases-planters",
+      "categoryName": "Ceramic Vases & Table Accents",
+      "images": [
+        "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 18,
+      "featured": true,
+      "badge": "New Arrival",
+      "details": {
+        "material": "High-fired Terracotta Ceramic",
+        "dimensions": "Large: 22cm x 20cm, Medium: 18cm x 16cm",
+        "finishColor": "Textured Matte Ivory",
+        "origin": "Pottery Line, Ahmed Home Decor",
+        "careInstructions": "Hand wash only with damp cloth."
+      },
+      "active": true,
+      "createdAt": "2026-01-22T10:00:00.000Z",
+      "updatedAt": "2026-03-04T10:00:00.000Z"
+    },
+    {
+      "id": "prod-6",
+      "name": "Luxury Embossed Velvet Cushion Covers (Pack of 5)",
+      "description": "Heavyweight 450 GSM royal Pakistani velvet cushions with gold zari corded piping and concealed zippers. Transforms sofas and diwans instantly.",
+      "originalPrice": 3400,
+      "discountPercentage": 0,
+      "price": 3400,
+      "oldPrice": null,
+      "categoryId": "cat-cushions-textiles",
+      "categoryName": "Velvet Cushions & Living Textiles",
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 25,
+      "featured": false,
+      "badge": "Pakistani Velvet",
+      "details": {
+        "material": "Premium Spun Velvet with Satin Lining",
+        "dimensions": "16 x 16 inches (40cm x 40cm)",
+        "finishColor": "Emerald Green, Deep Gold & Midnight Blue",
+        "origin": "Tailored in Punjab, Pakistan",
+        "careInstructions": "Dry clean or gentle cold hand wash."
+      },
+      "active": true,
+      "createdAt": "2026-01-25T10:00:00.000Z",
+      "updatedAt": "2026-03-05T10:00:00.000Z"
+    },
+    {
+      "id": "prod-7",
+      "name": "Surah Al-Ikhlas Kufic Geometric Wall Panel",
+      "description": "Sophisticated Kufic style Islamic calligraphy carved with CNC precision on composite wooden board with gold acrylic overlay. Stunning modern contrast.",
+      "originalPrice": 6500,
+      "discountPercentage": 20,
+      "price": 5200,
+      "oldPrice": 6500,
+      "categoryId": "cat-wall-art",
+      "categoryName": "Islamic Wall Art & Calligraphy",
+      "images": [
+        "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 7,
+      "featured": true,
+      "badge": "Featured",
+      "details": {
+        "material": "HDF Wood Core with Mirror Gold Acrylic",
+        "dimensions": "60cm x 60cm square (24 x 24 inches)",
+        "finishColor": "Walnut Dark Wood & Mirror Gold",
+        "origin": "Khushab Workshop Crafted",
+        "careInstructions": "Dust with soft dry feather duster."
+      },
+      "active": true,
+      "createdAt": "2026-02-01T10:00:00.000Z",
+      "updatedAt": "2026-03-05T10:00:00.000Z"
+    },
+    {
+      "id": "prod-8",
+      "name": "Artisanal Natural Marble Serving & Display Tray with Gold Handles",
+      "description": "Hand-cut natural Pakistani Breshia/Onyx marble vanity tray with brushed brass handles. Perfect for perfume bottles, candles, and dry fruits.",
+      "originalPrice": 4800,
+      "discountPercentage": 21,
+      "price": 3792,
+      "oldPrice": 4800,
+      "categoryId": "cat-vases-planters",
+      "categoryName": "Ceramic Vases & Table Accents",
+      "images": [
+        "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "stockStatus": "low_stock",
+      "stockQuantity": 3,
+      "featured": false,
+      "badge": "Natural Stone",
+      "details": {
+        "material": "Authentic Pakistani Veined Natural Marble",
+        "dimensions": "30cm x 20cm (12 x 8 inches)",
+        "finishColor": "Natural Veined Beige & Brushed Brass",
+        "origin": "Quarried and Polished in Pakistan",
+        "careInstructions": "Wipe with damp sponge; do not leave lemon/acidic liquids."
+      },
+      "active": true,
+      "createdAt": "2026-02-05T10:00:00.000Z",
+      "updatedAt": "2026-03-06T10:00:00.000Z"
+    }
+  ],
+  "reviews": [],
+  "media": [
+    {
+      "id": "media-1790329058453-2a141f",
+      "url": "/uploads/ahmed_1790329058453_e11fe547.jpeg",
+      "filename": "ahmed_1790329058453_e11fe547.jpeg",
+      "originalName": "WhatsApp Image 2026-09-23 at 15.50.48 (1).jpeg",
+      "mimeType": "image/jpeg",
+      "size": 48829,
+      "createdAt": "2026-09-25T09:37:38.453Z"
+    },
+    {
+      "id": "media-1790329049447-9f9483",
+      "url": "/uploads/ahmed_1790329049447_fbf1491c.jpeg",
+      "filename": "ahmed_1790329049447_fbf1491c.jpeg",
+      "originalName": "WhatsApp Image 2026-09-23 at 15.50.49.jpeg",
+      "mimeType": "image/jpeg",
+      "size": 57526,
+      "createdAt": "2026-09-25T09:37:29.447Z"
+    },
+    {
+      "id": "media-1790329041764-993e41",
+      "url": "/uploads/ahmed_1790329041763_87a26c53.jpeg",
+      "filename": "ahmed_1790329041763_87a26c53.jpeg",
+      "originalName": "WhatsApp Image 2026-09-23 at 15.50.49 (1).jpeg",
+      "mimeType": "image/jpeg",
+      "size": 74313,
+      "createdAt": "2026-09-25T09:37:21.764Z"
+    },
+    {
+      "id": "media-1790329033513-bcb782",
+      "url": "/uploads/ahmed_1790329033512_74c3596e.jpeg",
+      "filename": "ahmed_1790329033512_74c3596e.jpeg",
+      "originalName": "WhatsApp Image 2026-09-23 at 15.50.50.jpeg",
+      "mimeType": "image/jpeg",
+      "size": 77536,
+      "createdAt": "2026-09-25T09:37:13.513Z"
+    },
+    {
+      "id": "media-1790319146429-4a74b9",
+      "url": "/uploads/ahmed_1790319146427_7512901d.png",
+      "filename": "ahmed_1790319146427_7512901d.png",
+      "originalName": "ChatGPT Image Sep 25, 2026, 07_51_26 AM.png",
+      "mimeType": "image/png",
+      "size": 2063769,
+      "createdAt": "2026-09-25T06:52:26.429Z"
+    },
+    {
+      "id": "media-1790314265375-7fbef6",
+      "url": "/uploads/ahmed_1790314265372_9d15f215.png",
+      "filename": "ahmed_1790314265372_9d15f215.png",
+      "originalName": "ChatGPT Image Sep 23, 2026, 05_33_46 PM.png",
+      "mimeType": "image/png",
+      "size": 2452751,
+      "createdAt": "2026-09-25T05:31:05.375Z"
+    },
+    {
+      "id": "media-1790311649444-659e4d",
+      "url": "/uploads/ahmed_1790311649442_e6f963be.png",
+      "filename": "ahmed_1790311649442_e6f963be.png",
+      "originalName": "ChatGPT Image Sep 23, 2026, 05_16_38 PM.png",
+      "mimeType": "image/png",
+      "size": 2508012,
+      "createdAt": "2026-09-25T04:47:29.444Z"
+    },
+    {
+      "id": "media-1790311819912-724ca9",
+      "url": "/uploads/logo.png",
+      "filename": "logo.png",
+      "originalName": "logo.png",
+      "mimeType": "image/png",
+      "size": 442124,
+      "createdAt": "2026-09-25T04:42:46.739Z"
+    }
+  ]
+}
