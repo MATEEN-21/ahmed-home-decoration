@@ -54,27 +54,27 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-22 gap-4">
+        <div className="flex items-center justify-between h-20 sm:h-22 gap-2 sm:gap-4">
           {/* Brand & Logo */}
           <div
             onClick={() => handleNavClick("/")}
-            className="cursor-pointer flex items-center gap-3 sm:gap-3.5 select-none group py-1"
+            className="cursor-pointer flex items-center gap-2 sm:gap-3.5 select-none group py-1 min-w-0 max-w-[65%] sm:max-w-none"
           >
             <div className="relative shrink-0 rounded-2xl bg-white border border-[#E3DACD] p-1 shadow-2xs group-hover:border-[#4A5D43] group-hover:shadow-xs transition-all duration-200">
               <img
                 src="/logo.png"
                 alt={settings.shopName || "Ahmed Home Decoration"}
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-contain bg-[#FAF8F5]"
+                className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl object-contain bg-[#FAF8F5]"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <span className="font-display font-semibold text-lg sm:text-2xl text-[#1A1816] tracking-tight block leading-tight group-hover:text-[#4A5D43] transition-colors">
+            <div className="flex flex-col justify-center min-w-0">
+              <span className="font-display font-semibold text-base sm:text-2xl text-[#1A1816] tracking-tight block leading-tight group-hover:text-[#4A5D43] transition-colors truncate">
                 {settings.shopName || "Ahmed Home Decoration"}
               </span>
-              <span className="text-[10px] sm:text-xs text-[#1F1F1F] font-medium tracking-wide flex items-center gap-1 mt-0.5 sm:mt-1">
+              <span className="text-[10px] sm:text-xs text-[#1F1F1F] font-medium tracking-wide flex items-center gap-1 mt-0.5 sm:mt-1 truncate">
                 <MapPin className="w-3 h-3 text-[#4A5D43] shrink-0" />
-                <span className="truncate max-w-[170px] sm:max-w-none">
+                <span className="truncate max-w-[130px] sm:max-w-none">
                   {settings.location || "Thanan Market, Khushab, Pakistan"}
                 </span>
               </span>
@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
                     value={searchQuery}
                     onChange={(e) => onSearchChange(e.target.value)}
                     placeholder="Search wall art, clocks..."
-                    className="w-44 sm:w-60 pl-8 pr-3 py-1.5 text-xs bg-white text-[#1F1F1F] placeholder-[#666666] border border-[#E3DACD] rounded-lg focus:outline-none focus:border-[#4A5D43]"
+                    className="w-32 sm:w-60 pl-8 pr-3 py-1.5 text-xs bg-white text-[#1F1F1F] placeholder-[#666666] border border-[#E3DACD] rounded-lg focus:outline-none focus:border-[#4A5D43]"
                     autoFocus
                   />
                   <Search className="w-3.5 h-3.5 text-[#1F1F1F] absolute left-2.5 top-2.5" />

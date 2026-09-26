@@ -220,7 +220,7 @@ export const ProductReviewsSection: React.FC<ProductReviewsSectionProps> = ({
               <label className="block text-xs font-semibold text-[#1A1816] uppercase tracking-wider mb-1.5">
                 Star Rating (1–5) <span className="text-red-500">*</span>
               </label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((star) => {
                     const active = star <= (hoverRating ?? rating);

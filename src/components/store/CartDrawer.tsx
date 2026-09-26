@@ -60,10 +60,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-full sm:w-screen max-w-md bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
           {/* Header */}
-          <div className="p-5 border-b border-[#E3DACD] flex items-center justify-between bg-[#F2ECE4]">
+          <div className="p-4 sm:p-5 border-b border-[#E3DACD] flex items-center justify-between bg-[#F2ECE4]">
             <div className="flex items-center gap-2.5">
               <div className="w-10 h-10 rounded-xl bg-white text-[#4A5D43] flex items-center justify-center border border-[#E3DACD] shadow-xs">
                 <ShoppingBag className="w-5 h-5" />
@@ -127,7 +127,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           ) : (
             <>
               {/* Item List */}
-              <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3 bg-white">
+              <div className="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3 bg-white">
                 {cartItems.map((item) => {
                   const itemTotal = (item.product.price || 0) * item.quantity;
                   const itemId = item.id || getCartItemId(item.product.id, item.selectedDesign?.id);
@@ -143,7 +143,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       <img
                         src={itemImage}
                         alt={item.product.name}
-                        className="w-16 h-16 rounded-lg object-cover bg-white shrink-0 border border-[#E3DACD]"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover bg-white shrink-0 border border-[#E3DACD]"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src =
                             "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80";
@@ -161,9 +161,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                         {/* Exact Selected Design Badge */}
                         {design && (
-                          <div className="inline-flex items-center gap-1 mt-0.5 px-2 py-0.5 bg-emerald-50 text-[#4A5D43] border border-emerald-200 rounded text-[10px] font-bold">
+                          <div className="inline-flex items-center gap-1 mt-0.5 px-2 py-0.5 bg-emerald-50 text-[#4A5D43] border border-emerald-200 rounded text-[10px] font-bold max-w-full truncate">
                             <span>🎨 Design:</span>
-                            <span className="text-[#1A1816]">{design.name}</span>
+                            <span className="text-[#1A1816] truncate">{design.name}</span>
                           </div>
                         )}
 
@@ -183,28 +183,30 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         </div>
 
                         {/* Quantity Controls - Applies strictly to this selected design */}
-                        <div className="flex items-center gap-2 mt-2">
-                          <button
-                            type="button"
-                            onClick={() => onUpdateQuantity(itemId, -1)}
-                            className="w-6 h-6 rounded-md bg-white border border-[#E3DACD] text-[#1A1816] hover:bg-[#FAF8F5] flex items-center justify-center transition cursor-pointer shadow-2xs"
-                            aria-label="Decrease quantity"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="text-xs font-bold text-[#1A1816] w-5 text-center font-mono">
-                            {item.quantity}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => onUpdateQuantity(itemId, 1)}
-                            className="w-6 h-6 rounded-md bg-white border border-[#E3DACD] text-[#1A1816] hover:bg-[#FAF8F5] flex items-center justify-center transition cursor-pointer shadow-2xs"
-                            aria-label="Increase quantity"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
+                        <div className="flex flex-wrap items-center justify-between gap-2 mt-2">
+                          <div className="flex items-center gap-1.5">
+                            <button
+                              type="button"
+                              onClick={() => onUpdateQuantity(itemId, -1)}
+                              className="w-6 h-6 rounded-md bg-white border border-[#E3DACD] text-[#1A1816] hover:bg-[#FAF8F5] flex items-center justify-center transition cursor-pointer shadow-2xs"
+                              aria-label="Decrease quantity"
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="text-xs font-bold text-[#1A1816] w-5 text-center font-mono">
+                              {item.quantity}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => onUpdateQuantity(itemId, 1)}
+                              className="w-6 h-6 rounded-md bg-white border border-[#E3DACD] text-[#1A1816] hover:bg-[#FAF8F5] flex items-center justify-center transition cursor-pointer shadow-2xs"
+                              aria-label="Increase quantity"
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
 
-                          <span className="ml-auto font-mono font-bold text-xs sm:text-sm text-[#1A1816]">
+                          <span className="font-mono font-bold text-xs sm:text-sm text-[#1A1816]">
                             Rs. {itemTotal.toLocaleString()}
                           </span>
                         </div>
@@ -239,7 +241,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </div>
 
               {/* Footer / WhatsApp Checkout */}
-              <div className="p-5 border-t border-[#E3DACD] bg-[#F2ECE4] space-y-3">
+              <div className="p-4 sm:p-5 border-t border-[#E3DACD] bg-[#F2ECE4] space-y-3">
                 {/* Summary Row */}
                 <div className="space-y-1.5 text-xs text-[#1F1F1F]">
                   <div className="flex justify-between">
@@ -286,7 +288,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     href={whatsAppUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl font-medium tracking-wide text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors cursor-pointer text-center"
+                    className="w-full py-3.5 px-3 sm:px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl font-medium tracking-wide text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer text-center leading-snug break-words"
                   >
                     <WhatsAppIcon className="w-4 h-4 shrink-0" />
                     <span>Order on WhatsApp (Rs. {grandTotal.toLocaleString()})</span>

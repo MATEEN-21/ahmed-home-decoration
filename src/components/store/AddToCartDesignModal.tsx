@@ -125,7 +125,7 @@ export const AddToCartDesignModal: React.FC<AddToCartDesignModalProps> = ({
             </div>
 
             {/* Designs grid (handles 2, 3, 4, 5, 10+ designs cleanly) */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-2.5 max-h-[42vh] overflow-y-auto pr-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[42vh] overflow-y-auto pr-1">
               {designs.map((design) => {
                 const isSelected = selectedDesign?.id === design.id;
                 return (
@@ -215,11 +215,11 @@ export const AddToCartDesignModal: React.FC<AddToCartDesignModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 sm:p-5 border-t border-[#E3DACD] bg-[#FAF8F5] flex items-center gap-2.5">
+        <div className="p-3.5 sm:p-5 border-t border-[#E3DACD] bg-[#FAF8F5] flex items-center gap-2 sm:gap-2.5">
           <button
             type="button"
             onClick={onClose}
-            className="py-2.5 px-4 bg-white hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl text-xs font-semibold transition cursor-pointer"
+            className="py-2.5 px-3 sm:px-4 bg-white hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl text-xs font-semibold transition cursor-pointer shrink-0"
           >
             Cancel
           </button>
@@ -228,7 +228,7 @@ export const AddToCartDesignModal: React.FC<AddToCartDesignModalProps> = ({
             <button
               type="button"
               onClick={handleConfirm}
-              className="flex-1 py-2.5 px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl text-xs font-medium tracking-wide flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer"
+              className="flex-1 py-2.5 px-3 sm:px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl text-xs font-medium tracking-wide flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer text-center leading-snug break-words"
             >
               <ShoppingBag className="w-4 h-4 shrink-0" />
               <span>
@@ -240,10 +240,10 @@ export const AddToCartDesignModal: React.FC<AddToCartDesignModalProps> = ({
               type="button"
               disabled
               aria-disabled="true"
-              className="flex-1 py-2.5 px-4 bg-stone-200 text-stone-500 border border-stone-300 rounded-xl text-xs font-semibold tracking-wide flex items-center justify-center gap-2 cursor-not-allowed select-none shadow-none"
+              className="flex-1 py-2.5 px-3 sm:px-4 bg-stone-200 text-stone-500 border border-stone-300 rounded-xl text-xs font-semibold tracking-wide flex items-center justify-center gap-1.5 sm:gap-2 cursor-not-allowed select-none shadow-none text-center leading-snug"
             >
-              <Sparkles className="w-3.5 h-3.5 text-stone-400" />
-              <span>Select a Design Above to Add to Cart</span>
+              <Sparkles className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+              <span>Select a Design to Add to Cart</span>
             </button>
           )}
         </div>

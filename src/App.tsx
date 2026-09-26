@@ -358,7 +358,7 @@ function AppInner() {
   if (!data) return null;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] font-sans selection:bg-[#4A5D43] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] font-sans selection:bg-[#4A5D43] selection:text-white flex flex-col w-full max-w-full overflow-x-hidden">
       {/* Persistent Global Header */}
       <Header
         settings={data.settings}
@@ -373,7 +373,7 @@ function AppInner() {
       />
 
       {/* Main Content Area - Genuinely Separate Pages */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Routes>
           {/* 1. HOME: / */}
           <Route

@@ -47,7 +47,7 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
         </div>
 
         {/* Category Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
           {categories.map((cat) => {
             const productCount = (products || []).filter((p) => p && p.categoryId === cat.id && p.active).length;
             const isSelected = selectedCategoryId === cat.id;
@@ -80,7 +80,7 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
                 </div>
 
                 {/* Category Name & Action */}
-                <div className="p-3.5 bg-white">
+                <div className="p-3 sm:p-3.5 bg-white">
                   <h3 className="font-display text-sm sm:text-base font-semibold text-[#1A1816] group-hover:text-[#4A5D43] transition-colors line-clamp-1">
                     {cat.name}
                   </h3>

@@ -153,28 +153,28 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </div>
 
             {/* Sort & Stock dropdowns */}
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               {/* Featured toggle chip */}
               <button
                 type="button"
                 onClick={() => setFeaturedOnly(!featuredOnly)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-medium tracking-wide transition cursor-pointer flex items-center gap-1.5 ${
+                className={`px-3 py-2 sm:px-3.5 rounded-xl text-xs font-medium tracking-wide transition cursor-pointer flex items-center gap-1.5 shrink-0 ${
                   featuredOnly
                     ? "bg-[#4A5D43] text-white shadow-xs"
                     : "bg-[#FAF8F5] text-[#1F1F1F] border border-[#E3DACD] hover:bg-[#F2ECE4]"
                 }`}
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                Featured Only
+                <span>Featured Only</span>
               </button>
 
               {/* Stock Filter */}
-              <div className="flex items-center gap-1.5 bg-[#FAF8F5] rounded-xl px-3 py-2 border border-[#E3DACD]">
-                <Filter className="w-3.5 h-3.5 text-[#1F1F1F]" />
+              <div className="flex items-center gap-1.5 bg-[#FAF8F5] rounded-xl px-2.5 sm:px-3 py-2 border border-[#E3DACD] max-w-full">
+                <Filter className="w-3.5 h-3.5 text-[#1F1F1F] shrink-0" />
                 <select
                   value={stockFilter}
                   onChange={(e) => setStockFilter(e.target.value)}
-                  className="bg-transparent text-xs font-medium text-[#1A1816] focus:outline-none cursor-pointer"
+                  className="bg-transparent text-xs font-medium text-[#1A1816] focus:outline-none cursor-pointer max-w-full"
                 >
                   <option value="all">All Availability</option>
                   <option value="in_stock">In Stock Only</option>
@@ -184,12 +184,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </div>
 
               {/* Sort Filter */}
-              <div className="flex items-center gap-1.5 bg-[#FAF8F5] rounded-xl px-3 py-2 border border-[#E3DACD]">
-                <SlidersHorizontal className="w-3.5 h-3.5 text-[#1F1F1F]" />
+              <div className="flex items-center gap-1.5 bg-[#FAF8F5] rounded-xl px-2.5 sm:px-3 py-2 border border-[#E3DACD] max-w-full">
+                <SlidersHorizontal className="w-3.5 h-3.5 text-[#1F1F1F] shrink-0" />
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-transparent text-xs font-medium text-[#1A1816] focus:outline-none cursor-pointer"
+                  className="bg-transparent text-xs font-medium text-[#1A1816] focus:outline-none cursor-pointer max-w-full"
                 >
                   <option value="featured">Sort: Featured</option>
                   <option value="newest">Sort: Newest</option>
@@ -201,7 +201,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </div>
 
           {/* Category Filter Horizontal Chips */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-2 scrollbar-none border-t border-[#E3DACD]">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-2 scrollbar-none border-t border-[#E3DACD] max-w-full">
             <button
               type="button"
               onClick={() => onSelectCategory(null)}

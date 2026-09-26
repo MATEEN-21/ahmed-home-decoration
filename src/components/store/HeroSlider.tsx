@@ -300,17 +300,17 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
 
         {/* Slide Content: Centered Safe-Container with Single Active Slide (No Text Overlap) */}
         <div className="relative z-30 w-full flex-1 flex flex-col justify-center">
-          <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-5 sm:px-10 lg:px-16 xl:px-20 py-20 sm:py-24 lg:py-28">
-            <div className="max-w-3xl min-h-[300px] sm:min-h-[340px] flex flex-col justify-center">
+          <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-10 lg:px-16 xl:px-20 py-16 sm:py-24 lg:py-28">
+            <div className="max-w-3xl min-h-[280px] sm:min-h-[340px] flex flex-col justify-center">
               {activeSlide && (
                 <div
                   key={`slide-content-${currentIndex}`}
-                  className="max-w-3xl space-y-5 sm:space-y-7 animate-in fade-in duration-500 ease-out"
+                  className="max-w-3xl space-y-4 sm:space-y-7 animate-in fade-in duration-500 ease-out"
                 >
                   {/* Badge / Pill */}
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 text-[#F2ECE4] text-xs font-semibold tracking-widest uppercase shadow-sm transition-colors self-start">
+                  <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 text-[#F2ECE4] text-xs font-semibold tracking-widest uppercase shadow-sm transition-colors self-start max-w-full truncate">
                     <Sparkles className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
-                    <span>
+                    <span className="truncate">
                       {activeSlide.badge ||
                         activeSlide.subtitle ||
                         "Pakistani Artisan Crafted & Curated"}
@@ -324,13 +324,13 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                         {activeSlide.subtitle}
                       </span>
                     )}
-                    <h1 className="font-display text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-normal text-white tracking-tight leading-[1.12] drop-shadow-md">
+                    <h1 className="font-display text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-normal text-white tracking-tight leading-[1.15] drop-shadow-md">
                       {activeSlide.title || "Transform Your Home with Timeless Décor"}
                     </h1>
                   </div>
 
                   {/* Description */}
-                  <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal drop-shadow-sm">
+                  <p className="text-white text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal drop-shadow-sm">
                     {activeSlide.description ||
                       "Discover elegant décor pieces, royal Islamic calligraphy, and bespoke clocks made to bring warmth and character to every room."}
                   </p>
@@ -341,7 +341,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                     <button
                       type="button"
                       onClick={() => handleButtonClick(activeSlide.buttonLink || "/products")}
-                      className="px-8 py-4 bg-[#4A5D43] hover:bg-[#3B4A35] active:scale-98 text-white rounded-xl text-sm sm:text-base font-medium tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-3 cursor-pointer group"
+                      className="px-6 sm:px-8 py-3.5 sm:py-4 bg-[#4A5D43] hover:bg-[#3B4A35] active:scale-98 text-white rounded-xl text-xs sm:text-base font-medium tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 sm:gap-3 cursor-pointer group"
                     >
                       <span>{activeSlide.buttonText || "Explore Collection"}</span>
                       <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
@@ -359,7 +359,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             type="button"
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className="absolute left-3 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/25 hover:border-white text-white flex items-center justify-center transition-all duration-200 cursor-pointer shadow-xl hover:scale-105 active:scale-95 group"
+            className="hidden sm:flex absolute left-3 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/25 hover:border-white text-white items-center justify-center transition-all duration-200 cursor-pointer shadow-xl hover:scale-105 active:scale-95 group"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-0.5 transition-transform" />
           </button>
@@ -371,7 +371,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             type="button"
             onClick={nextSlide}
             aria-label="Next Slide"
-            className="absolute right-3 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/25 hover:border-white text-white flex items-center justify-center transition-all duration-200 cursor-pointer shadow-xl hover:scale-105 active:scale-95 group"
+            className="hidden sm:flex absolute right-3 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/25 hover:border-white text-white items-center justify-center transition-all duration-200 cursor-pointer shadow-xl hover:scale-105 active:scale-95 group"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-0.5 transition-transform" />
           </button>

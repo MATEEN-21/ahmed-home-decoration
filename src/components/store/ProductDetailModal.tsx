@@ -374,7 +374,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     )}
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {designs.map((design, idx) => {
                       const isSelected = selectedDesign?.id === design.id;
                       return (
@@ -540,7 +540,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                         selectedDesignImage: selectedDesign?.image
                       });
                     }}
-                    className="w-full py-3.5 px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl font-medium tracking-wide text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-xs transition-colors cursor-pointer text-center"
+                    className="w-full py-3.5 px-3 sm:px-4 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl font-medium tracking-wide text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer text-center leading-snug break-words"
                   >
                     <WhatsAppIcon className="w-4 h-4 shrink-0" />
                     <span>
@@ -555,9 +555,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       onClick={() => {
                         onAddToCart(product, quantity, selectedDesign);
                       }}
-                      className="w-full py-2.5 px-4 bg-[#FAF8F5] hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition cursor-pointer"
+                      className="w-full py-2.5 px-3 sm:px-4 bg-[#FAF8F5] hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition cursor-pointer text-center leading-snug break-words"
                     >
-                      <ShoppingBag className="w-4 h-4 text-[#1A1816]" />
+                      <ShoppingBag className="w-4 h-4 text-[#1A1816] shrink-0" />
                       <span>
                         Add {selectedDesign ? selectedDesign.name : ""} to Cart ({quantity})
                       </span>
