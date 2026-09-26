@@ -1,12 +1,12 @@
-import React from "react";
-import { Eye, CheckCircle2, AlertTriangle, XCircle, Sparkles, ShoppingBag, Star, Layers } from "lucide-react";
+import React, { useState } from "react";
+import { Eye, CheckCircle2, AlertTriangle, XCircle, Sparkles, ShoppingBag, Star } from "lucide-react";
 import { WhatsAppIcon } from "../common/WhatsAppIcon";
 import { Product, ProductDesign } from "../../types";
 import { createProductWhatsAppUrl, ORDER_WHATSAPP_NUMBER } from "../../lib/whatsapp";
 import { logWhatsAppInquiry } from "../../lib/api";
 import { getProductDiscountInfo } from "../../lib/pricing";
-import { getInitialReviewsForProduct, calculateRatingSummary } from "../../lib/reviews";
 import { getProductDesigns } from "../../lib/variants";
+import { AddToCartDesignModal } from "./AddToCartDesignModal";
 
 interface ProductCardProps {
   product: Product;
@@ -30,6 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const designs = getProductDesigns(product);
   const hasMultipleDesigns = designs.length > 1;
   const defaultSingleDesign = designs.length === 1 ? designs[0] : undefined;
+  const [isDesignModalOpen, setIsDesignModalOpen] = useState(false);
 
   const whatsAppOrderUrl = createProductWhatsAppUrl(
     product,
@@ -173,7 +174,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             )}
           </div>
 
-          {/* Actions: Direct WhatsApp Order + Add to Cart / Details */}
+          {/* Actions: Direct WhatsApp Order + Add to Cart */}
           <div className="flex items-center gap-2">
             {isOutOfStock ? (
               <button
@@ -188,19 +189,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               >
                 <XCircle className="w-3.5 h-3.5 text-stone-400 shrink-0" />
                 <span>Out of Stock</span>
-              </button>
-            ) : hasMultipleDesigns ? (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenDetails(product);
-                }}
-                className="flex-1 py-2.5 px-3 bg-[#4A5D43] hover:bg-[#3B4A35] text-white rounded-xl text-xs font-medium tracking-wide flex items-center justify-center gap-1.5 shadow-xs transition-colors cursor-pointer"
-                title={`Select from ${designs.length} available designs`}
-              >
-                <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#C5A880]" />
-                <span>Choose Design ({designs.length})</span>
               </button>
             ) : (
               <a
@@ -241,49 +229,41 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               >
                 <ShoppingBag className="w-4 h-4 text-stone-400" />
               </button>
-            ) : hasMultipleDesigns ? (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenDetails(product);
-                }}
-                className="p-2.5 bg-[#FAF8F5] hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl transition-colors cursor-pointer relative"
-                title="Select design before adding to cart"
-                aria-label="Select design"
-              >
-                <ShoppingBag className="w-4 h-4 text-[#1A1816]" />
-              </button>
-            ) : onAddToCart ? (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onAddToCart(product, 1, defaultSingleDesign);
-                }}
-                className="p-2.5 bg-[#FAF8F5] hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl transition-colors cursor-pointer"
-                title="Add to Cart"
-                aria-label="Add to cart"
-              >
-                <ShoppingBag className="w-4 h-4 text-[#1A1816]" />
-              </button>
             ) : (
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onOpenDetails(product);
+                  if (hasMultipleDesigns) {
+                    setIsDesignModalOpen(true);
+                  } else if (onAddToCart) {
+                    onAddToCart(product, 1, defaultSingleDesign);
+                  } else {
+                    onOpenDetails(product);
+                  }
                 }}
                 className="p-2.5 bg-[#FAF8F5] hover:bg-[#F2ECE4] text-[#1A1816] border border-[#E3DACD] rounded-xl transition-colors cursor-pointer"
-                title="View details"
-                aria-label="View details"
+                title={hasMultipleDesigns ? "Choose design to add to cart" : "Add to Cart"}
+                aria-label="Add to cart"
               >
-                <Eye className="w-4 h-4 text-[#1A1816]" />
+                <ShoppingBag className="w-4 h-4 text-[#1A1816]" />
               </button>
             )}
           </div>
         </div>
       </div>
+
+      {/* Design Selection Modal for Add to Cart flow on products with multiple designs */}
+      {hasMultipleDesigns && onAddToCart && (
+        <AddToCartDesignModal
+          isOpen={isDesignModalOpen}
+          onClose={() => setIsDesignModalOpen(false)}
+          product={product}
+          onConfirmAddToCart={(prod, qty, selectedDesign) => {
+            onAddToCart(prod, qty, selectedDesign);
+          }}
+        />
+      )}
     </div>
   );
 };
