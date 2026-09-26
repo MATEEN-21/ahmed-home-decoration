@@ -748,11 +748,18 @@ app.get("/api/public/data", (req, res) => {
     };
   }
 
+  const activeProducts = (db.products || []).filter((p: any) => p && p.active !== false);
+  const categoryIdsWithActiveProducts = new Set(
+    activeProducts.map((p: any) => p.categoryId).filter(Boolean)
+  );
+
   const publicData = {
     settings,
-    slides: (db.slides || []).filter((s: any) => s.active).sort((a: any, b: any) => (a.order || 0) - (b.order || 0)),
-    categories: (db.categories || []).filter((c: any) => c.active).sort((a: any, b: any) => (a.order || 0) - (b.order || 0)),
-    products: (db.products || []).filter((p: any) => p.active),
+    slides: (db.slides || []).filter((s: any) => s && s.active !== false).sort((a: any, b: any) => (a.order || 0) - (b.order || 0)),
+    categories: (db.categories || [])
+      .filter((c: any) => c && c.active !== false && categoryIdsWithActiveProducts.has(c.id))
+      .sort((a: any, b: any) => (a.order || 0) - (b.order || 0)),
+    products: activeProducts,
     reviewsSummary
   };
   res.json(publicData);

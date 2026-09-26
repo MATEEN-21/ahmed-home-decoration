@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Product, Category, ProductDesign } from "../../types";
 import { ProductCard } from "./ProductCard";
 import { Search, Filter, SlidersHorizontal, Sparkles, AlertCircle } from "lucide-react";
@@ -100,6 +100,27 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   };
 
   const selectedCategoryObj = categories.find((c) => c.id === selectedCategoryId);
+
+  // Only categories with at least 1 active product are shown in filter chips
+  const activeCategories = useMemo(() => {
+    return (categories || []).filter((cat) => {
+      if (!cat || cat.active === false) return false;
+      const count = (products || []).filter(
+        (p) => p && p.categoryId === cat.id && p.active !== false
+      ).length;
+      return count > 0;
+    });
+  }, [categories, products]);
+
+  // If a category was selected that no longer has any active products, reset to All Products
+  useEffect(() => {
+    if (selectedCategoryId) {
+      const hasActiveProducts = activeCategories.some((c) => c.id === selectedCategoryId);
+      if (!hasActiveProducts) {
+        onSelectCategory(null);
+      }
+    }
+  }, [selectedCategoryId, activeCategories, onSelectCategory]);
 
   return (
     <section id="products" className="bg-[#FAF8F5] py-14 sm:py-20 border-b border-[#E3DACD]">
@@ -213,9 +234,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             >
               All Products ({(products || []).length})
             </button>
-            {(categories || []).map((cat) => {
+            {activeCategories.map((cat) => {
               const isSelected = selectedCategoryId === cat.id;
-              const count = (products || []).filter((p) => p && p.categoryId === cat.id && p.active).length;
+              const count = (products || []).filter((p) => p && p.categoryId === cat.id && p.active !== false).length;
               return (
                 <button
                   key={cat.id}

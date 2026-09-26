@@ -15,7 +15,19 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
   selectedCategoryId,
   onSelectCategory,
 }) => {
-  if (!categories || categories.length === 0) return null;
+  // Only display a category if it currently has at least 1 active product
+  const visibleCategories = React.useMemo(() => {
+    return (categories || []).filter((cat) => {
+      if (!cat || cat.active === false) return false;
+      const count = (products || []).filter(
+        (p) => p && p.categoryId === cat.id && p.active !== false
+      ).length;
+      return count > 0;
+    });
+  }, [categories, products]);
+
+  // If there are no categories with active products, completely hide this section
+  if (!visibleCategories || visibleCategories.length === 0) return null;
 
   return (
     <section id="categories" className="bg-[#F2ECE4] py-14 sm:py-20 border-b border-[#E3DACD]">
@@ -48,8 +60,8 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
 
         {/* Category Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
-          {categories.map((cat) => {
-            const productCount = (products || []).filter((p) => p && p.categoryId === cat.id && p.active).length;
+          {visibleCategories.map((cat) => {
+            const productCount = (products || []).filter((p) => p && p.categoryId === cat.id && p.active !== false).length;
             const isSelected = selectedCategoryId === cat.id;
 
             return (

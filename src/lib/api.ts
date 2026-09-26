@@ -16,51 +16,28 @@ const TOKEN_KEY = "ahmed_decor_admin_token";
 const CUSTOM_PRODUCTS_KEY = "ahmed_decor_custom_products";
 const CUSTOM_CATEGORIES_KEY = "ahmed_decor_custom_categories";
 
+// Clear any stale legacy custom products/categories cache from localStorage
+if (typeof window !== "undefined") {
+  try {
+    localStorage.removeItem(CUSTOM_PRODUCTS_KEY);
+    localStorage.removeItem(CUSTOM_CATEGORIES_KEY);
+  } catch {}
+}
+
 export function getLocalCustomProducts(): Product[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = localStorage.getItem(CUSTOM_PRODUCTS_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return [];
 }
 
-export function saveLocalCustomProduct(product: Product) {
-  if (typeof window === "undefined" || !product?.id) return;
-  try {
-    const existing = getLocalCustomProducts();
-    const filtered = existing.filter((p) => p.id !== product.id);
-    localStorage.setItem(CUSTOM_PRODUCTS_KEY, JSON.stringify([product, ...filtered]));
-  } catch (err) {
-    console.warn("Failed to save product in local persistence:", err);
-  }
+export function saveLocalCustomProduct(_product: Product) {
+  // Products are persisted directly to the server database
 }
 
-export function removeLocalCustomProduct(productId: string) {
-  if (typeof window === "undefined" || !productId) return;
-  try {
-    const existing = getLocalCustomProducts();
-    const filtered = existing.filter((p) => p.id !== productId);
-    localStorage.setItem(CUSTOM_PRODUCTS_KEY, JSON.stringify(filtered));
-  } catch (err) {
-    console.warn("Failed to remove product from local persistence:", err);
-  }
+export function removeLocalCustomProduct(_productId: string) {
+  // Products are removed directly from the server database
 }
 
-export async function syncProductsWithServer(products: Product[]): Promise<void> {
-  if (!products || products.length === 0) return;
-  try {
-    await fetch("/api/admin/sync-products", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ products })
-    });
-  } catch (e) {
-    // Non-blocking background sync
-  }
+export async function syncProductsWithServer(_products: Product[]): Promise<void> {
+  // Deprecated: server db.json is the single source of truth
 }
 
 export function getAdminToken(): string | null {
@@ -223,10 +200,6 @@ export function extractPublicDataFromDb(raw: any): PublicDataResponse {
     .filter((s: any) => s.active !== false)
     .sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
 
-  const categories: Category[] = (db.categories || [])
-    .filter((c: any) => c.active !== false)
-    .sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
-
   const products: Product[] = (db.products || [])
     .filter((p: any) => p.active !== false)
     .map((p: any) => {
@@ -245,6 +218,14 @@ export function extractPublicDataFromDb(raw: any): PublicDataResponse {
         discountPercentage
       };
     });
+
+  const categoryIdsWithActiveProducts = new Set(
+    products.map((p) => p.categoryId).filter(Boolean)
+  );
+
+  const categories: Category[] = (db.categories || [])
+    .filter((c: any) => c.active !== false && categoryIdsWithActiveProducts.has(c.id))
+    .sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
 
   return {
     settings,
@@ -273,48 +254,33 @@ export function getLocalFallbackData(): PublicDataResponse {
 export async function fetchPublicData(): Promise<PublicDataResponse> {
   let data: PublicDataResponse | null = null;
 
-  // 1. Attempt to fetch dynamic data from server API
+  // 1. Fetch dynamic data from live server API (single source of truth)
   try {
     const res = await fetch("/api/public/data");
     const contentType = res.headers.get("content-type") || "";
     if (res.ok && contentType.includes("application/json")) {
       const json = await res.json();
-      if (json && Array.isArray(json.products) && json.products.length > 0) {
+      if (json && Array.isArray(json.products)) {
         data = json;
       }
     }
   } catch (err) {
-    console.warn("Server API /api/public/data unavailable, attempting static CDN fallback:", err);
+    console.warn("Server API /api/public/data unavailable:", err);
   }
 
-  // 2. Static CDN JSON Fallback (/data/db.json)
-  if (!data || !Array.isArray(data.products) || data.products.length === 0) {
-    try {
-      const staticRes = await fetch("/data/db.json");
-      const staticContentType = staticRes.headers.get("content-type") || "";
-      if (staticRes.ok && staticContentType.includes("application/json")) {
-        const rawJson = await staticRes.json();
-        data = extractPublicDataFromDb(rawJson);
-      }
-    } catch (e) {
-      console.warn("Static CDN /data/db.json fetch failed, using bundled fallback:", e);
-    }
-  }
-
-  // 3. Guaranteed local bundled JSON fallback
-  if (!data || !Array.isArray(data.products) || data.products.length === 0) {
+  // 2. Guaranteed fallback only if server was completely unreachable
+  if (!data || !Array.isArray(data.products)) {
     data = getLocalFallbackData();
   }
 
-  // Merge with locally persisted custom products if any were added via admin panel
-  const localProducts = getLocalCustomProducts();
-  if (localProducts.length > 0) {
-    const serverIds = new Set((data.products || []).map((p) => p.id));
-    const missingOnServer = localProducts.filter((p) => !serverIds.has(p.id) && p.active !== false);
-    if (missingOnServer.length > 0) {
-      data.products = [...missingOnServer, ...(data.products || [])];
-      syncProductsWithServer(missingOnServer).catch(() => {});
-    }
+  // Filter storefront categories strictly to those that currently have at least 1 active product
+  if (data && Array.isArray(data.products)) {
+    const activeCategoryIds = new Set(
+      data.products.filter((p) => p && p.active !== false).map((p) => p.categoryId).filter(Boolean)
+    );
+    data.categories = (data.categories || []).filter(
+      (c) => c && c.active !== false && activeCategoryIds.has(c.id)
+    );
   }
 
   return data;
@@ -412,18 +378,6 @@ export async function changeAdminCredentials(payload: {
 // Admin All Data
 export async function fetchAdminAllData(): Promise<AdminAllDataResponse> {
   const data: AdminAllDataResponse = await authFetch("/api/admin/all-data");
-
-  // Merge with locally persisted custom products if any were not present in server response
-  const localProducts = getLocalCustomProducts();
-  if (localProducts.length > 0) {
-    const serverIds = new Set((data.products || []).map((p) => p.id));
-    const missingOnServer = localProducts.filter((p) => !serverIds.has(p.id));
-    if (missingOnServer.length > 0) {
-      data.products = [...missingOnServer, ...(data.products || [])];
-      syncProductsWithServer(missingOnServer).catch(() => {});
-    }
-  }
-
   return data;
 }
 

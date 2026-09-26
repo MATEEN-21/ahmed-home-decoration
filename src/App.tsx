@@ -178,13 +178,13 @@ function AppInner() {
   const loadStoreData = useCallback(async () => {
     try {
       const res = await fetchPublicData();
-      if (res && Array.isArray(res.products) && res.products.length > 0) {
+      if (res && Array.isArray(res.products)) {
         setData(res);
       }
     } catch (err: any) {
       console.warn("Background store data refresh notice:", err);
       setData((prev) => {
-        if (!prev || !prev.products || prev.products.length === 0) {
+        if (!prev || !prev.products) {
           setError(err.message || "Failed to load store data.");
         }
         return prev;
@@ -322,7 +322,7 @@ function AppInner() {
   }
 
   // PUBLIC STOREFRONT RENDER
-  if (isLoading && (!data || !data.products || data.products.length === 0)) {
+  if (isLoading && (!data || !data.products)) {
     return (
       <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center p-6">
         <img
@@ -335,7 +335,7 @@ function AppInner() {
     );
   }
 
-  if (error && (!data || !data.products || data.products.length === 0)) {
+  if (error && (!data || !data.products)) {
     return (
       <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center p-6 text-center">
         <div className="bg-white p-8 rounded-2xl border border-[#E3DACD] shadow-md max-w-md">
