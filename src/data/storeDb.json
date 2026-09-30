@@ -1,0 +1,213 @@
+{
+  "admin": {
+    "email": "tayyabmateen2121@gmail.com",
+    "passwordHash": "4f6bc401cac0901ebe4a3b9e21bdf9ba18b60eee080469a9131e999dfe527133e489862cc281fd1ef08a134a950cc227de2d655068e5ec57f50c0a6609f46879",
+    "tokens": [
+      "ahmed_adm_eyJlbWFpbCI6InRheXlhYm1hdGVlbjIxMjFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzkwNzAwNjg1LCJleHAiOjE3OTMyOTI2ODUsIm5vbmNlIjoiNmRjMDk1NWM3NWFmMjZjMyJ9.xeqFY4ABNhV3uVA8Bjy2PTGTV37daKnqOG-1qT6ExlU",
+      "ahmed_adm_eyJlbWFpbCI6InRheXlhYm1hdGVlbjIxMjFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzkwNTEwMzI2LCJleHAiOjE3OTMxMDIzMjYsIm5vbmNlIjoiM2Y1MGMwOTAwZDBjZmNhNCJ9.HE9yGRhNArBTKlBlFL2gmTqpau39-mp7E3AKoEW_m4o",
+      "1a4eb0ee69bf2db82cbc5820417ffaff4455c5a9d888fad430fc580a6d65dd32",
+      "b009fe28df9b1fa3fa87fdf58702a54ada8ae9d1c44f0fb8d0403544c078e49c",
+      "c3dd41a7308b714c85bac93203eca4654e23f04fe8955fd2f262e056fcc08c55",
+      "348469389b5545183274139aea22cdaa4a2249347b2a5023c27724aa5eb5cbb9",
+      "c3a1e2935800ab23348f00f01c6ed269768ae8cecf2def282bc20bc0372c6e79",
+      "2711e116cb5ea7ec8c363856f3d37e649fe6b8f67a5132a2f9931b120a89217e",
+      "4c5972247238706fff5e44602eb4f215df4ed3cc878b384d564cdf6f1d6c9dc6",
+      "e5f523d3de947c630661d183b72bfecf65c1c15ea94bec834ba41ed6c000c252"
+    ]
+  },
+  "settings": {
+    "shopName": "Ahmed Home Decoration",
+    "tagline": "Elevating Pakistani Homes with Timeless Elegance & Artisan Craft",
+    "phone": "0304 9088810",
+    "whatsapp": "0304 9088810",
+    "email": "",
+    "location": "Thanan Market, Khushab, Pakistan",
+    "googleMapsUrl": "https://maps.app.goo.gl/ygUXQUFpzNvTUMTs9",
+    "googleMapsEmbed": "https://maps.google.com/maps?q=32.295008,72.349388&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "announcement": {
+      "enabled": false,
+      "text": "✨ Exclusive Khushab Décor Collection: Free Delivery on orders above Rs. 4,999 across Pakistan!"
+    },
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com",
+      "tiktok": "https://tiktok.com",
+      "youtube": "https://youtube.com"
+    },
+    "deliveryNote": "Nationwide Express Cash on Delivery (COD) & Safe Breakage-Proof Packaging Across Pakistan",
+    "currency": "Rs."
+  },
+  "slides": [
+    {
+      "id": "slide-1790179919346",
+      "title": "Lush Greenery for Modern Outdoor Spaces",
+      "description": "Bring everlasting freshness to your lawns, balconies, rooftops, and vertical gardens with high-durability, weather-resistant artificial grass.",
+      "image": "/uploads/ahmed_1790311649442_e6f963be.png",
+      "buttonText": "Explore Grass Collection",
+      "buttonLink": "/products",
+      "active": true,
+      "order": 4
+    },
+    {
+      "id": "slide-1790319348448",
+      "title": "Modern Wall Art & Living Room Decor",
+      "subtitle": "Transform Your Home Interior",
+      "badge": "Best Quality Frames",
+      "description": "Discover our exclusive collection of premium wall art, framed paintings, and modern home decoration pieces designed to add elegance and style to your space.",
+      "image": "/uploads/ahmed_1790319146427_7512901d.png",
+      "buttonText": "Explore Collection",
+      "buttonLink": "/products",
+      "active": true,
+      "order": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-wall-art",
+      "name": "Islamic Wall Art & Calligraphy",
+      "slug": "islamic-wall-art",
+      "description": "Laser-cut stainless steel and acrylic calligraphy featuring Surahs, Ayatul Kursi, and modern geometric panels.",
+      "image": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 1
+    },
+    {
+      "id": "cat-clocks-mirrors",
+      "name": "Luxury Wall Clocks & Mirrors",
+      "slug": "wall-clocks-mirrors",
+      "description": "Silent sweep Scandinavian clocks, gold sunburst mirrors, and ornate entryway accents.",
+      "image": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 2
+    },
+    {
+      "id": "cat-lighting",
+      "name": "Lamps & Ambient Lighting",
+      "slug": "lighting-lamps",
+      "description": "Traditional brass filigree lanterns, warm LED bedside glow lamps, and crystal chandeliers.",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 3
+    },
+    {
+      "id": "cat-vases-planters",
+      "name": "Ceramic Vases & Table Accents",
+      "slug": "vases-planters",
+      "description": "Glazed ceramic vases, gold leaf trays, faux pampas grass arrangements, and marble coasters.",
+      "image": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 4
+    },
+    {
+      "id": "cat-cushions-textiles",
+      "name": "Velvet Cushions & Living Textiles",
+      "slug": "cushions-textiles",
+      "description": "Plush embroidered Pakistani velvet throw pillow covers, table runners, and tasseled throws.",
+      "image": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
+      "active": true,
+      "order": 5
+    },
+    {
+      "id": "cat-1790432369943-85580a",
+      "name": "Artificial Grass & Plants",
+      "slug": "artificial-grass-plants",
+      "description": "",
+      "image": "",
+      "active": true,
+      "order": 6
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1790329404741-caed26",
+      "name": "Framed Scenic Landscape & Floral Vertical Wall Art Set",
+      "description": "Elegant vertical framed wall art featuring beautiful nature, waterfall, and floral scenery. Perfect for modern living room and hallway decoration with a premium wooden frame finish.",
+      "originalPrice": 350,
+      "discountPercentage": 0,
+      "price": 350,
+      "oldPrice": null,
+      "categoryId": "cat-clocks-mirrors",
+      "categoryName": "Luxury Wall Clocks & Mirrors",
+      "images": [
+        "/uploads/ahmed_1790329033512_74c3596e.jpeg",
+        "/uploads/ahmed_1790329041763_87a26c53.jpeg",
+        "/uploads/ahmed_1790329049447_fbf1491c.jpeg",
+        "/uploads/ahmed_1790329058453_e11fe547.jpeg"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 10,
+      "featured": true,
+      "badge": "New Arrival",
+      "details": {
+        "material": "High-quality synthetic wood frame with HD print matte finish",
+        "dimensions": "",
+        "finishColor": "Rich Dark Wood Frame & Vibrant Multi-color Scenery",
+        "origin": "Ahmed Home Decoration, Khushab",
+        "careInstructions": "Wipe gently with a dry microfiber cloth; keep away from direct moisture."
+      },
+      "active": true,
+      "createdAt": "2026-09-25T09:43:24.741Z",
+      "updatedAt": "2026-09-25T09:43:24.741Z"
+    },
+    {
+      "id": "prod-1790432370431-0c5a57",
+      "name": "Artificial Grass Wall Panel (Rs. 130 per sq. ft.)",
+      "description": "Premium quality artificial grass wall panel designed for lush green vertical gardens, accent walls, and home or office decoration. Durable, weather-resistant, and easy to install. Priced at Rs. 130 per square foot.",
+      "originalPrice": 130,
+      "discountPercentage": 0,
+      "price": 130,
+      "oldPrice": null,
+      "categoryId": "cat-1790432369943-85580a",
+      "categoryName": "Artificial Grass & Plants",
+      "images": [
+        "/uploads/ahmed_1790508492587_859066b8.png"
+      ],
+      "stockStatus": "in_stock",
+      "stockQuantity": 10,
+      "featured": true,
+      "badge": "New Arrival",
+      "details": {
+        "material": "High-Density UV-Protected Plastic / Artificial Foliage",
+        "dimensions": "3 Fit 4 Fit 6 Fit",
+        "finishColor": "Natural Lush Green",
+        "origin": "Ahmed Home Decoration, Khushab",
+        "careInstructions": "Wipe gently with a damp cloth or dust softly"
+      },
+      "active": true,
+      "createdAt": "2026-09-26T14:19:30.431Z",
+      "updatedAt": "2026-09-27T11:28:25.085Z"
+    }
+  ],
+  "inquiries": [],
+  "media": [
+    {
+      "id": "media-1790510326274-1d5b42",
+      "url": "/uploads/ahmed_1790510326273_e5ac4133.png",
+      "filename": "ahmed_1790510326273_e5ac4133.png",
+      "originalName": "test_upload_decor.png",
+      "mimeType": "image/png",
+      "size": 70,
+      "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+      "createdAt": "2026-09-27T11:58:46.274Z"
+    },
+    {
+      "id": "media-1790508492589-eb0680",
+      "url": "/uploads/ahmed_1790508492587_859066b8.png",
+      "filename": "ahmed_1790508492587_859066b8.png",
+      "originalName": "ChatGPT Image Sep 23, 2026, 05_16_38 PM.png",
+      "mimeType": "image/png",
+      "size": 2508012,
+      "createdAt": "2026-09-27T11:28:12.589Z"
+    },
+    {
+      "id": "media-1790311819912-724ca9",
+      "url": "/uploads/logo.png",
+      "filename": "logo.png",
+      "originalName": "logo.png",
+      "mimeType": "image/png",
+      "size": 442124,
+      "createdAt": "2026-09-25T04:42:46.739Z"
+    }
+  ],
+  "reviews": []
+}
